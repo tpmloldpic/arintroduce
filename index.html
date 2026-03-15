@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>尋找老照片 AR 小遊戲 APP 說明</title>
+
+<style>
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;
+  font-weight:300;
+  background:#000;
+}
+
+.hero{
+  position: relative;
+  min-height: 100vh;
+  padding: 20px 14px 40px;
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(255,255,255,.12), rgba(0,0,0,0) 60%),
+    linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.48)),
+    url("images/bg.jpg");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+.hero-content{
+  position:relative;
+  max-width:980px;
+  margin:0 auto;
+  color:#fff;
+}
+
+.hero-title{
+  text-align:center;
+  font-size:32px;
+  font-weight:600;
+  margin:6px 0 16px;
+  letter-spacing:.5px;
+  color:#fff;
+}
+
+.yt-box{
+  width:100%;
+  max-width:920px;
+  margin:0 auto;
+  border-radius:16px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 14px 40px rgba(0,0,0,.35);
+  position:relative;
+  padding-top:56.25%;
+}
+.yt-box iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.info-card{
+  margin:18px auto 0;
+  max-width:920px;
+  padding:20px;
+  border-radius:16px;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.info-card p{
+  margin:0;
+  line-height:1.85;
+  font-size:20px;
+  text-indent:2em;
+}
+
+.step{
+  margin:22px auto 0;
+  max-width:920px;
+  padding:20px;
+  border-radius:16px;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.step-title{
+  margin:0 0 14px 0;
+  font-size:28px;
+  font-weight:600;
+  color:#fff;
+}
+
+.step-text{
+  line-height:1.85;
+  font-size:20px;
+  margin-bottom:18px;
+}
+.step-text p{
+  margin:0 0 10px 0;
+  text-indent:2em;
+}
+
+.no-indent{
+  text-indent:0 !important;
+}
+
+.step-images{
+  display:grid;
+  gap:18px;
+}
+
+.step-images img{
+  width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto;
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.28);
+}
+
+/* Step 1：上面 APP 一張，下面兩張同大小 */
+.step1-app-wrap{
+  display:flex;
+  justify-content:center;
+  margin-bottom:30px;
+}
+.step1-app-wrap img{
+  width:100%;
+  max-width:180px;
+}
+
+.step1-bottom{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+  align-items:start;
+  max-width:560px;
+  margin:0 auto;
+}
+
+.step1-frame,
+.step1-label{
+  display:flex;
+  justify-content:center;
+}
+
+.step1-frame img,
+.step1-label img{
+  width:100%;
+  max-width:250px;
+}
+
+/* 單張圖置中 */
+.step-single{
+  display:flex;
+  justify-content:center;
+}
+.step-single img{
+  width:100%;
+  max-width:190px;
+}
+
+/* 掃描圖和文字中間留更大空間 */
+.step-gap-large{
+  margin-top:56px;
+}
+
+/* 三張示例圖 */
+.step-images.three{
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px;
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* Step 3 */
+.step-pass{
+  display:flex;
+  justify-content:center;
+}
+.step-pass img{
+  width:100%;
+  max-width:190px;
+}
+
+.note-green{
+  color:#35d17c;
+  font-weight:500;
+}
+
+.note-red{
+  color:#ff4d4f;
+  font-weight:500;
+}
+
+.note-blue{
+  color:#86b7ff;
+  font-weight:500;
+}
+
+/* ===== 手機版優化 ===== */
+@media(max-width:900px){
+  .hero{
+    padding:14px 10px 28px;
+  }
+
+  .hero-content,
+  .yt-box,
+  .info-card,
+  .step{
+    max-width:100%;
+  }
+
+  .hero-title{
+    font-size:24px;
+    margin:4px 0 12px;
+  }
+
+  .info-card,
+  .step{
+    padding:14px;
+    border-radius:14px;
+  }
+
+  .info-card p,
+  .step-text{
+    font-size:16px;
+    line-height:1.8;
+  }
+
+  .step-title{
+    font-size:21px;
+    margin-bottom:10px;
+  }
+
+  .step1-app-wrap{
+    margin-bottom:18px;
+  }
+
+  .step1-app-wrap img{
+    max-width:130px;
+  }
+
+  .step1-bottom{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    max-width:260px;
+    margin:0 auto;
+  }
+
+  .step1-frame img,
+  .step1-label img{
+    max-width:100%;
+    border-radius:10px;
+  }
+
+  .step-single img{
+    max-width:140px;
+  }
+
+  .step-gap-large{
+    margin-top:32px;
+  }
+
+  .step-images.three{
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    max-width:240px;
+    margin:0 auto;
+  }
+
+  .step-images.three img{
+    border-radius:10px;
+  }
+
+  .step-pass img{
+    max-width:140px;
+  }
+}
+
+@media(min-width:768px){
+  .hero-title{font-size:42px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div class="hero-content">
+
+    <h2 class="hero-title">尋找老照片 AR 小遊戲 APP 說明</h2>
+
+    <!-- 把 YOUR_VIDEO_ID 換成你的影片 ID -->
+    <div class="yt-box">
+      <iframe
+        src="https://www.youtube.com/embed/q_KWb9r5Bhc"
+        title="尋找老照片 AR 小遊戲 APP 說明影片"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="info-card">
+      <p>
+        透過 APP 進行「尋找老照片」AR 小遊戲。您可選擇先觀看上方說明影片，或依照下方步驟操作。
+        答對5題請來櫃檯領禮物，加油!
+      </p>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step">
+      <h3 class="step-title">1. 先找到正確的老照片</h3>
+
+      <div class="step-text">
+        <p>
+          請先在 APP 下方選擇「遊戲挑戰」。
+          展場中每一幅老照片的裱框右下角，都有一張標示題名與年代的老照片解說牌。
+        </p>
+        <p>
+          找到與 APP 顯示內容相同的老照片後，確認題名與年代都跟 APP 相符，
+          再按下 <span class="note-blue">「Go find」</span> 進入 AR 掃描畫面。
+        </p>
+      </div>
+
+      <div class="step1-app-wrap">
+        <img src="images/step01_app.png" alt="步驟一 APP 畫面">
+      </div>
+
+      <div class="step1-bottom">
+        <div class="step1-frame">
+          <img src="images/step01_frame.png" alt="步驟一 展場相框">
+        </div>
+
+        <div class="step1-label">
+          <img src="images/step01_label.png" alt="步驟一 題名與年代標籤">
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <h3 class="step-title">2. 進入 AR 掃描並送出答案</h3>
+
+      <div class="step-text">
+        <p>
+          畫面進入 AR 鏡頭後，請對準相框中的老照片，
+          按下 <span class="note-blue">「送出答案」</span>，
+          AR 模型會幫忙辨識圖像。
+        </p>
+      </div>
+
+      <div class="step-single">
+        <img src="images/step02_scan.png" alt="步驟二 掃描畫面">
+      </div>
+
+      <div class="step-text step-gap-large">
+        <p class="note-green">
+          ○ 如果答對，畫面會顯示「你找到我了！」，按下「回年代表選單」老照片會回填至年代表，
+          並且計入正確答題。部分老照片回填後會有「歷史說明」，可以點進去觀看影片與 AI 動圖。
+        </p>
+        <p class="note-red">
+          ✕ 如果您沒有選到正確的照片，畫面會顯示「不是這張」。
+        </p>
+      </div>
+
+      <div class="step-text" style="margin-top:8px; margin-bottom:12px;">
+        <p class="no-indent">填答成功示例：</p>
+      </div>
+
+      <div class="step-images three">
+        <img src="images/step02_success1.png" alt="步驟二 成功畫面 1">
+        <img src="images/step02_success2.png" alt="步驟二 成功畫面 2">
+        <img src="images/step02_success3.png" alt="步驟二 成功畫面 3">
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <h3 class="step-title">3. 累積答題進度並完成挑戰</h3>
+
+      <div class="step-text">
+        <p>
+          左上角會顯示目前答題率。當答對 5 題後，會出現 PASS 標示，
+          請持此畫面至櫃檯向工作人員領取禮物。
+        </p>
+        <p class="note-red">
+          ＊禮物數量有限，送完為止。
+        </p>
+      </div>
+
+      <div class="step-pass">
+        <img src="images/step03_pass.png" alt="步驟三 PASS 畫面">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
